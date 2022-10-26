@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>icon.ico">
+      <title>
+        <%= htmlWebpackPlugin.options.title %>
+      </title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <!-- built files will be auto injected -->
+  <!-- <script crossorigin="anonymous" integrity="sha384-OZmxTjkv7EQo5XDMPAmIkkvywVeXw59YyYh6zq8UKfkbor13jS+5p8qMTBSA1q+F"
+      src="https://lib.baomitu.com/vue/2.6.11/vue.min.js"></script>
+    <script crossorigin="anonymous"
+      integrity="sha512-29iw7beFlOKv+1ReSQyjHwtgDMr6F3c6l8ApcaB3vDi1v3WksGlIxeXxm/P5mk6IwZkPVhPMh0w8orocJ1v0qQ=="
+      src="https://lib.baomitu.com/vue-router/3.5.4/vue-router.common.js"></script> -->
+  <div id="app"></div>
+  <div id="appLoading">
+    <div class='loading'></div>
+  </div>
+  <div id="app" style="display: none"></div>
+</body>
+
+</html>
+
+<style media="screen" type="text/css">
+  .loading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    ;
+    opacity: 0.8;
+  }
+
+  .loading.fixed {
+    position: fixed;
+  }
+
+  .loading:before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0);
+    border: 5px solid rgba(0, 183, 229, 0.9);
+    opacity: .9;
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-radius: 50px;
+    box-shadow: 0 0 35px #2187e7;
+    width: 50px;
+    height: 50px;
+    -moz-animation: spinPulse 1s infinite ease-in-out;
+    -webkit-animation: spinPulse 1s infinite linear;
+    margin: -25px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  .loading:after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0);
+    border: 5px solid rgba(0, 183, 229, 0.9);
+    opacity: .9;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-radius: 50px;
+    box-shadow: 0 0 15px #2187e7;
+    width: 30px;
+    height: 30px;
+    -moz-animation: spinoffPulse 1s infinite linear;
+    -webkit-animation: spinoffPulse 1s infinite linear;
+
+    margin: -15px 0 0 -15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  @-moz-keyframes spinPulse {
+
+    0% {
+
+      -moz-transform: rotate(160deg);
+      opacity: 0;
+      box-shadow: 0 0 1px #2187e7;
+    }
+
+    50% {
+
+      -moz-transform: rotate(145deg);
+      opacity: 1;
+    }
+
+    100% {
+
+      -moz-transform: rotate(-320deg);
+      opacity: 0;
+    }
+  }
+
+  @-moz-keyframes spinoffPulse {
+
+    0% {
+
+      -moz-transform: rotate(0deg);
+    }
+
+    100% {
+
+      -moz-transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes spinPulse {
+
+    0% {
+
+      -webkit-transform: rotate(160deg);
+      opacity: 0;
+      box-shadow: 0 0 1px #2187e7;
+    }
+
+    50% {
+
+      -webkit-transform: rotate(145deg);
+      opacity: 1;
+    }
+
+    100% {
+
+      -webkit-transform: rotate(-320deg);
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes spinoffPulse {
+
+    0% {
+
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+
+      -webkit-transform: rotate(360deg);
+    }
+  }
+</style>
